@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>true</ShowAllFiles>
+    <_LastSelectedProfileId>C:\Users\liuguofeng\Desktop\MusicApp\MusicApp\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Control\Widget\CarouselControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\PlayerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SearchListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SearchTextBoxControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SongDetailControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SongInfoControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SongPlayListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\ThemeColorControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\VolumeControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\Widget\LoadingControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\ChildPage\SongListDetailsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\ChildPage\SongListOfDayPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\Widget\SongsControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\FMPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\FocusOnPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\FoundMusicPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\LikeMusicPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\LivePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\LocalAndDownloadPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\PodcastPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\RecentPlayPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\SearchPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageView\VideoPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\NotifyIcon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginUI.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\lyrics.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Component\AppStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\AppStyle\DefaultContextMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\Widget\CarouselControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\PlayerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SearchListControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SearchTextBoxControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SongDetailControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SongInfoControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SongPlayListControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\ThemeColorControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\VolumeControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\Widget\LoadingControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\ChildPage\SongListDetailsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\ChildPage\SongListOfDayPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\Widget\SongsControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\FMPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\FocusOnPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\FoundMusicPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\LikeMusicPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\LivePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\LocalAndDownloadPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\PodcastPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\RecentPlayPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\SearchPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageView\VideoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Color\BlackColor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Color\BlueColor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Color\DefaultColor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Color\GoldColor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Color\GreenColor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Color\PinkColor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Common.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\NotifyIcon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\AppStyle\DefaultScrollView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Style\MainWindowStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginUI.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\lyrics.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

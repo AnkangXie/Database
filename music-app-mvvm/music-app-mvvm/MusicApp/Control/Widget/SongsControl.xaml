@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="MusicApp.Control.Widget.SongsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.Control.Widget"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" x:Name="songsControl"
+             d:DesignHeight="350" d:DesignWidth="600">
+    <Grid Margin="20 0" MaxWidth="1200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="推荐歌单&#xe601;" FontSize="19" FontWeight="UltraBlack" Foreground="#333333" FontFamily="{DynamicResource Iconfont}"/>
+
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Model.Playlists}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="5" Rows="2"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <!--每日推荐歌曲-->
+                        <Border Margin="0 0 10 10" Visibility="{Binding SongVisibility}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="45"/>
+                                </Grid.RowDefinitions>
+                                <Border CornerRadius="5">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/Assets/Images/dim.png" Stretch="Fill"/>
+                                    </Border.Background>
+                                    <Border Background="Transparent">
+                                        <behaviors:Interaction.Triggers>
+                                            <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                                <behaviors:InvokeCommandAction Command="{Binding DataContext.SongDetailsClickCommand,ElementName=songsControl}" CommandParameter="#"/>
+                                            </behaviors:EventTrigger>
+                                        </behaviors:Interaction.Triggers>
+                                        <Grid>
+                                            <TextBlock Text="{Binding DataContext.Model.Calendar,ElementName=songsControl}" FontSize="25" Foreground="White" Margin="0 20 0 0"
+                                                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="&#xe89e;" FontSize="70" FontFamily="{DynamicResource Iconfont}" Foreground="White"
+                                                VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <Button Width="30" Height="30" Cursor="Hand" Command="{Binding DataContext.PlayAllClickCommand,ElementName=songsControl}"
+                                                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                                                <Button.Template>
+                                                    <ControlTemplate>
+                                                        <Border Background="White" Opacity="0.9" CornerRadius="50">
+                                                            <TextBlock Text="&#xe87c;"  FontFamily="{DynamicResource Iconfont}"
+                                                               HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                               Foreground="red" FontSize="15" />
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Border}},Path=IsMouseOver}" Value="True">
+                                                                <Setter  Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Border}},Path=IsMouseOver}" Value="False">
+                                                                <Setter  Property="Visibility" Value="Collapsed"/>
+                                                            </DataTrigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </Grid>
+                                    </Border>
+                                </Border>
+                                <TextBlock Text="每日歌曲推荐" Margin="5" Grid.Row="1" FontSize="14" FontWeight="Light" Foreground="#333333"/>
+                            </Grid>
+                        </Border>
+                        <!--歌单-->
+                        <Border Margin="0 0 10 10" Visibility="{Binding SongListVisibility}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="45"/>
+                                </Grid.RowDefinitions>
+                                <Button>
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="5">
+                                                <behaviors:Interaction.Triggers>
+                                                    <behaviors:EventTrigger EventName="MouseLeftButtonDown">
+                                                        <behaviors:InvokeCommandAction Command="{Binding DataContext.SongDetailsClickCommand,ElementName=songsControl}" CommandParameter="{Binding Id}"/>
+                                                    </behaviors:EventTrigger>
+                                                </behaviors:Interaction.Triggers>
+                                                <Border.Background>
+                                                    <ImageBrush ImageSource="{Binding CoverImgUrl}" Stretch="Fill"/>
+                                                </Border.Background>
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5">
+                                                        <TextBlock Text="&#xea6d;" FontFamily="{DynamicResource Iconfont}" Foreground="White" />
+                                                        <TextBlock Text="{Binding PlayCount}" FontFamily="{DynamicResource Iconfont}" Foreground="White" />
+                                                        <TextBlock Text="万" FontFamily="{DynamicResource Iconfont}" Foreground="White" />
+                                                    </StackPanel>
+                                                    <Button x:Name="but" Width="30" Height="30"  Cursor="Hand"
+                                                        HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                                                        Command="{Binding DataContext.PlayAllClickCommand,ElementName=songsControl}" CommandParameter="{Binding Id}"
+                                                        Margin="10" Visibility="Collapsed">
+                                                        <Button.Template>
+                                                            <ControlTemplate>
+                                                                <Border Background="White" Opacity="0.9" CornerRadius="50">
+                                                                    <TextBlock Text="&#xe87c;"  FontFamily="{DynamicResource Iconfont}"
+                                                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                                       Foreground="red" FontSize="15" />
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Button.Template>
+                                                    </Button>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver"  Value="true">
+                                                    <Setter Property="Visibility" TargetName="but" Value="Visible"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Grid Grid.Row="1">
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Margin="5" 
+                                               FontSize="14" FontWeight="Light" Foreground="#333333"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+
+            </ItemsControl.ItemTemplate>
+
+
+        </ItemsControl>
+    </Grid>
+
+</UserControl>

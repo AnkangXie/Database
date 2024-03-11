@@ -1,0 +1,116 @@
+﻿<Page x:Class="MusicApp.PageView.RecentPlayPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicApp.PageView"
+             xmlns:app="clr-namespace:MusicApp.Component.AppCsStyle"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{DynamicResource MinAuxBackColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="最近播放    " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="{DynamicResource MainTextColor}"/>
+                <TextBlock Text="共" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource MainTextColor}"/>
+                <TextBlock Name="Count" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource MainTextColor}" >
+                    <TextBlock.TextDecorations>
+                        <TextDecoration Location="Underline"/>
+                    </TextBlock.TextDecorations>
+                </TextBlock>
+                <TextBlock Text="首" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource MainTextColor}"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock  Name="Display" Text="显示列表"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="LightBlue">
+                <behaviors:Interaction.Triggers>
+                    <behaviors:EventTrigger EventName="MouseDown">
+                        <behaviors:InvokeCommandAction Command="{Binding ShowButCommand}" />
+                    </behaviors:EventTrigger>
+                </behaviors:Interaction.Triggers>
+                </TextBlock>
+                <TextBlock  Name="Fresh" Text="刷新列表" Margin="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="LightBlue">
+                     <behaviors:Interaction.Triggers>
+                             <behaviors:EventTrigger EventName="MouseDown">
+                             <behaviors:InvokeCommandAction Command="{Binding FreshButCommand}" />
+                             </behaviors:EventTrigger>
+                         </behaviors:Interaction.Triggers>
+                </TextBlock>
+                <TextBlock Name="Clean" Text="清空列表" Margin="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="LightBlue">
+                     <behaviors:Interaction.Triggers>
+                             <behaviors:EventTrigger EventName="MouseDown">
+                             <behaviors:InvokeCommandAction Command="{Binding CleanButCommand}" />
+                             </behaviors:EventTrigger>
+                         </behaviors:Interaction.Triggers>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <TextBlock Text="音乐标题" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="{DynamicResource MainTextColor}"/>
+                </Border>
+                <Border Grid.Column="1">
+                    <TextBlock Text="歌手" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="{DynamicResource MainTextColor}"/>
+                </Border>
+                <Border Grid.Column="2">
+                    <TextBlock Text="播放时间" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Foreground="{DynamicResource MainTextColor}"/>
+                </Border>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2">
+            <app:DefaultScrollViewer VerticalScrollBarVisibility="Auto" >
+                <ListBox x:Name="RecentPlayBox" 
+                             ItemContainerStyle="{DynamicResource DefaultListBoxItem}" 
+                             Background="Transparent" 
+                             BorderThickness="0" 
+                             AlternationCount="2" 
+                             ItemsSource="{Binding localAndDownLoadModel.localsonglist}"
+                             d:ItemsSource="{d:SampleData ItemCount=20}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="800">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="SongNameText" Text="{Binding SongName}"  
+                                            FontSize="15" 
+                                            TextTrimming="CharacterEllipsis" 
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Grid.Column="0" 
+                                            Foreground="{DynamicResource MainTextColor}"/>
+                                <TextBlock x:Name="AuthorText" Text="{Binding Singer}"  
+                                            FontSize="15" 
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Grid.Column="1"  
+                                            Foreground="{DynamicResource MainTextColor}" />
+                                <TextBlock x:Name="PlayTime" Text="{Binding PlayTime}"
+                                            FontSize="15" 
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="{DynamicResource MainTextColor}"
+                                            Grid.Column="2"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </app:DefaultScrollViewer>
+        </Border>
+    </Grid>
+</Page>

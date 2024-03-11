@@ -1,0 +1,37 @@
+﻿<Application x:Class="MusicApp.App"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MusicApp"
+             StartupUri="/Views/LoginUI.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Component/AppStyle.xaml"/>
+                <ResourceDictionary Source="/Themes/Common.xaml"/>
+                <!--主题颜色-->
+                <ResourceDictionary Source="/Themes/Color/DefaultColor.xaml"/>
+                <ResourceDictionary Source="/Themes/Color/BlackColor.xaml"/>
+                <ResourceDictionary Source="/Themes/Color/PinkColor.xaml"/>
+                <ResourceDictionary Source="/Themes/Color/BlueColor.xaml"/>
+                <ResourceDictionary Source="/Themes/Color/GreenColor.xaml"/>
+                <ResourceDictionary Source="/Themes/Color/GoldColor.xaml"/>
+
+
+
+            </ResourceDictionary.MergedDictionaries>
+            
+            
+            <Style TargetType="{x:Type Window}">
+                <Setter Property="FontFamily" Value="微软雅黑" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+        
+        </ResourceDictionary>
+
+        
+
+    </Application.Resources>
+    
+    
+</Application>

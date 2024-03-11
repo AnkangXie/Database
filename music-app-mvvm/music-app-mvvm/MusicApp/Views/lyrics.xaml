@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicApp.Views"
+        xmlns:Control="clr-namespace:MusicApp.Control" x:Class="MusicApp.Views.lyrics"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Topmost="True"
+        MouseMove="Move_MouseMove"
+        Title="lrc" Height="120" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Cursor="">
+    <Grid>
+        <Label x:Name="lbl" Content="{Binding ElementName=Window1,Path=str}" HorizontalAlignment="Center" Margin="40,0,0,0" VerticalAlignment="Center" Foreground="#ef6d32" FontSize="36">
+
+        </Label>
+        <Button x:Name="lock" Content="🔒" HorizontalAlignment="Left" Padding="0,0" VerticalAlignment="Top" Width="32" Background="{x:Null}" BorderBrush="#FFEF6D32" Foreground="#FFEF6D32" FontSize="20" Cursor="Hand" FontWeight="Bold" Click="lock_Click"/>
+        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Padding="0,0" VerticalAlignment="Top" Width="32" Background="{x:Null}" BorderBrush="#FFEF6D32" Foreground="#FFEF6D32" FontSize="20" Cursor="Hand" FontWeight="Bold" Margin="0,44,0,0" Click="plus_Click"/>
+        <Button x:Name="minus" Content="-" HorizontalAlignment="Left" Padding="0,0" VerticalAlignment="Top" Width="32" Background="{x:Null}" BorderBrush="#FFEF6D32" Foreground="#FFEF6D32" FontSize="20" Cursor="Hand" FontWeight="Bold" Margin="0,88,0,0" Click="minus_Click"/>
+
+    </Grid>
+</Window>

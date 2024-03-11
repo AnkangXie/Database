@@ -1,0 +1,48 @@
+﻿2023-11-24 18:33:34: System.IO.FileNotFoundException: Could not find file 'D:\cache.txt'.
+File name: 'D:\cache.txt'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding)
+   at System.IO.File.ReadAllText(String path)
+   at MusicApp.Views.lyrics.timer_Tick(Object sender, EventArgs e) in D:\还原\music-app-mvvm-new\music-app-mvvm\MusicApp\Views\lyrics.xaml.cs:line 42
+   at System.Windows.Threading.DispatcherTimer.FireTick()
+   at System.Windows.Threading.DispatcherTimer.<>c.<Restart>b__21_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+
+2023-11-24 18:34:02: System.IO.FileNotFoundException: Could not find file 'D:\cache.txt'.
+File name: 'D:\cache.txt'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding)
+   at System.IO.File.ReadAllText(String path)
+   at MusicApp.Views.lyrics.timer_Tick(Object sender, EventArgs e) in D:\还原\music-app-mvvm-new\music-app-mvvm\MusicApp\Views\lyrics.xaml.cs:line 42
+   at System.Windows.Threading.DispatcherTimer.FireTick()
+   at System.Windows.Threading.DispatcherTimer.<>c.<Restart>b__21_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+
+2023-11-24 18:42:29: System.IO.FileNotFoundException: Could not find file 'D:\cache.txt'.
+File name: 'D:\cache.txt'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.InternalReadAllText(String path, Encoding encoding)
+   at System.IO.File.ReadAllText(String path)
+   at MusicApp.Views.lyrics.timer_Tick(Object sender, EventArgs e) in D:\还原\music-app-mvvm-new\music-app-mvvm\MusicApp\Views\lyrics.xaml.cs:line 42
+   at System.Windows.Threading.DispatcherTimer.FireTick()
+   at System.Windows.Threading.DispatcherTimer.<>c.<Restart>b__21_0(Object state)
+   at System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   at System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+

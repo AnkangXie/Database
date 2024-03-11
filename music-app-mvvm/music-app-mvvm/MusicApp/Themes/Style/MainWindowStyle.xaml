@@ -1,0 +1,428 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!--头部部分-->
+    <!--logo-->
+    <Style x:Key="LogoStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Cursor="Hand">
+                        <Border Background="White" CornerRadius="50" Width="25" Height="25">
+                            <Border Width="15" Height="15" CornerRadius="50">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="pack://application:,,,/Assets/music.ico"/>
+                                </Border.Background>
+                            </Border>
+                        </Border>
+                        <TextBlock Text="千千阙歌" FontSize="18" Foreground="White" Margin="8 0 0 0"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--login-->
+    <Style x:Key="LoginStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="30" Height="30" CornerRadius="50">
+                            <Border.Background>
+                                <ImageBrush ImageSource="pack://application:,,,/Assets/Images/head_portrait.png"></ImageBrush>
+                            </Border.Background>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--popup的准备-->
+    <Style x:Key="ImageButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="LightGray" CornerRadius="10" Width="50"  Height="30">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="/Assets/sign.png" Width="20" Height="20"/>
+                                <TextBlock Grid.Column="1" Text="签到" VerticalAlignment="Center" FontSize="8"  />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightBlue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle1" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/vip.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="会员中心" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+
+                        <!-- 右侧图片和文本 -->
+                        <TextBlock Grid.Column="2" Text="未订购" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+                        <Image Grid.Column="3" Source="/Assets/right.png" Width="10" Height="10" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle2" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/medal.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="登记" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+
+                        <!-- 右侧图片和文本 -->
+                        <TextBlock Grid.Column="2" Text="Lv.0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+                        <Image Grid.Column="3" Source="/Assets/right.png" Width="10" Height="10" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle3" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/store.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="商城" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+
+                        <!-- 右侧图片和文本 -->
+                        <TextBlock Grid.Column="2" Text="" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+                        <Image Grid.Column="3" Source="/Assets/right.png" Width="10" Height="10" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle4" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/person.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="个人信息设置" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+
+                        <!-- 右侧图片和文本 -->
+                        <TextBlock Grid.Column="2" Text="" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+                        <Image Grid.Column="3" Source="/Assets/right.png" Width="10" Height="10" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle5" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/duplicate.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="绑定社交账号" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+
+                        <!-- 右侧图片和文本 -->
+                        <Image Grid.Column="2" Source="/Assets/sina.png" Width="15" Height="15" />
+                        <Image Grid.Column="3" Source="/Assets/right.png" Width="10" Height="10" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle6" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/customer_service.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="我的客服" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+
+                        <!-- 右侧图片和文本 -->
+                        <TextBlock Grid.Column="2" Text="" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+                        <Image Grid.Column="3" Source="/Assets/right.png" Width="10" Height="10" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomButtonStyle7" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 左侧图片和文本 -->
+                        <Image Grid.Column="0" Source="/Assets/close_user.png" Width="20" Height="20"/>
+                        <TextBlock Grid.Column="1" Text="退出登录" VerticalAlignment="Center"  Foreground="{DynamicResource MainTextColor}" FontSize="9"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--登录状态的popup-->
+
+    <!--登录状态显示-->
+    <Style x:Key="LoginStatus" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Button Style="{DynamicResource WinButtonStyle}" 
+                            Height="30" Width="60" Margin="3 0" FontSize="13" Content="{TemplateBinding Content}" Name="PopupButton"/>
+                        <Popup  Name="buttonPopup" IsOpen="False" 
+                                StaysOpen="False"
+                                PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                Placement="Bottom">
+                            <Grid Height="241.12" Width="200" Background="{DynamicResource MainPopupBackColor}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32.56"/>
+                                    <RowDefinition Height="32.56"/>
+                                    <RowDefinition Height="176"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <!-- 第一行 -->
+                                        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="关注" Foreground="{DynamicResource PlayListAuxTextColor}" FontSize="8"/>
+                                        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="喜欢" Foreground="{DynamicResource PlayListAuxTextColor}" FontSize="8"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="粉丝" Foreground="{DynamicResource PlayListAuxTextColor}" FontSize="8"/>
+
+                                        <!-- 第二行 -->
+                                        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" Foreground="{DynamicResource BottomTextColor}"/>
+                                        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" Foreground="{DynamicResource BottomTextColor}"/>
+                                        <TextBlock Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" Foreground="{DynamicResource BottomTextColor}"/>
+                                    </Grid>
+                                </Border>
+                                <Border Grid.Row="1" >
+                                    <Button Style="{DynamicResource ImageButtonStyle}"/>
+                                </Border>
+                                <Border Grid.Row="2" >
+                                    <StackPanel>
+                                        <Button Style="{DynamicResource CustomButtonStyle1}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}"/>
+                                        <Button Style="{DynamicResource CustomButtonStyle2}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}" Margin="0,5,0,0"/>
+                                        <Button Style="{DynamicResource CustomButtonStyle3}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}" Margin="0,5,0,0"/>
+                                        <Button Style="{DynamicResource CustomButtonStyle4}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}" Margin="0,5,0,0"/>
+                                        <Button Style="{DynamicResource CustomButtonStyle5}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}" Margin="0,5,0,0"/>
+                                        <Button Style="{DynamicResource CustomButtonStyle6}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}" Margin="0,5,0,0"/>
+                                        <Button Style="{DynamicResource CustomButtonStyle7}" Content="" FontSize="9" Foreground="{DynamicResource PlayListAuxTextColor}" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonPopup" Property="IsOpen" Value="True" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="buttonPopup" Property="IsOpen" Value="False" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--导航键-->
+    <Style x:Key="NavButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{DynamicResource HeadButBackColor}" CornerRadius="50" Cursor="Hand">
+                        <TextBlock x:Name="textBlock" 
+                                       VerticalAlignment="Center"
+                                       Foreground="{DynamicResource HeadForeColor}"
+                                       HorizontalAlignment="Center"
+                                       Text="{TemplateBinding Content}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       FontFamily="{DynamicResource Iconfont}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" TargetName="textBlock" Value="{DynamicResource HeadButDisableColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--vip-->
+    <Style x:Key="VipStyle" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border Background="#cccccc" Width="45" Height="15" CornerRadius="8" Cursor="Hand">
+                        <StackPanel HorizontalAlignment="Center" 
+                                                   VerticalAlignment="Center" Orientation="Horizontal">
+                            <TextBlock FontFamily="{DynamicResource Iconfont}" 
+                                                   Foreground="White"
+                                                   FontSize="12"
+                                                   Text="&#xe62a;"
+                                                   HorizontalAlignment="Center" 
+                                                   VerticalAlignment="Center"/>
+                            <TextBlock FontFamily="{DynamicResource Iconfont}" 
+                                                   Foreground="White"
+                                                   FontSize="8"
+                                                   Text="开通 &#xe601;"
+                                                   HorizontalAlignment="Center" 
+                                                   VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--侧边栏部分-->
+    <!--侧边栏菜单按钮样式1-->
+    <Style x:Key="MenuListButtonStyle1" TargetType="{x:Type RadioButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="radioBorder" CornerRadius="3" Cursor="Hand" BorderThickness="0">
+                            <TextBlock 
+                                    x:Name="radioText"
+                                    Foreground="{DynamicResource MainTextColor}"
+                                    Text="{TemplateBinding Content}"
+                                    Margin="10 0 0 0"
+                                    HorizontalAlignment="Left" 
+                                    VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="radioBorder" Value="{DynamicResource SideOverColor}"/>
+                            <Setter Property="Foreground" TargetName="radioText" Value="{DynamicResource MainOverBackColor}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="radioBorder" Value="{DynamicResource SideFocusColor}"/>
+                            <Setter Property="FontWeight" TargetName="radioText" Value="Black"/>
+                            <Setter Property="FontSize" TargetName="radioText" Value="17"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--侧边栏按菜单钮样式2-->
+    <Style x:Key="MenuListButtonStyle2" TargetType="{x:Type RadioButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+                        <Border x:Name="radioBorder" CornerRadius="3" Cursor="Hand">
+                            <TextBlock 
+                                    x:Name="radioText"
+                                    Text="{TemplateBinding Content}"
+                                    FontFamily="{DynamicResource Iconfont}"
+                                    Foreground="{DynamicResource MainTextColor}"
+                                    Margin="10 0 0 0"
+                                    HorizontalAlignment="Left" 
+                                    VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="radioBorder" Value="{DynamicResource SideOverColor}"/>
+                            <Setter Property="Foreground" TargetName="radioText" Value="{DynamicResource MainOverBackColor}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="radioBorder" Value="{DynamicResource SideFocusColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
